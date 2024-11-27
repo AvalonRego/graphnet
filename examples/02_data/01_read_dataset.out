@@ -1,0 +1,72 @@
+graphnet [MainProcess] WARNING  2024-11-27 15:59:53 - has_icecube_package - `icecube` not available. Some functionality may be missing.
+Meander not installed... contours can not be calculated.
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - Logger.__init__ - Writing log to logs/graphnet_20241127-160002.log
+hmm /raven/u/arego/graphnet/data/tests/sqlite/oscNext_genie_level7_v02/oscNext_genie_level7_v02_first_5_frames.db
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main - Available columns in SRTInIcePulses
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . awtd
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . charge
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . dom_number
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . dom_time
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . dom_type
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . dom_x
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . dom_y
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . dom_z
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . event_no
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . event_time
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . hlc
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . is_bad_dom
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . is_bright_dom
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . is_errata_dom
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . is_saturated_dom
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . pmt_area
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . pmt_number
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . rde
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . string
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . width
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main - Available columns in truth
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . CascadeFilter_13
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . DeepCoreFilter_13
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . EventID
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . L3_oscNext_bool
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . L4_oscNext_bool
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . L5_oscNext_bool
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . L6_oscNext_bool
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . L7_oscNext_bool
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . MuonFilter_13
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . OnlineL2Filter_17
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . RunID
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . SubEventID
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . SubrunID
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . azimuth
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . dbang_decay_length
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . elasticity
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . energy
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . energy_cascade
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . energy_track
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . event_no
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . event_time
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . inelasticity
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . interaction_type
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . pid
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . position_x
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . position_y
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . position_z
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . sim_type
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . stopped_muon
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . track_length
+graphnet [MainProcess] INFO     2024-11-27 16:00:02 - main -   . zenith
+graphnet [MainProcess] WARNING  2024-11-27 16:00:02 - SQLiteDataset._remove_missing_columns - Removing the following (missing) truth variables: interaction_time
+graphnet [MainProcess] INFO     2024-11-27 16:00:03 - main - Data(x=[9, 8], n_pulses=9, edge_index=[2, 72], dataset_path='/raven/u/arego/graphnet/data/tests/sqlite/oscNext_genie_level7_v02/oscNext_genie_level7_v02_first_5_frames.db', event_no=[1], muon=0, muon_stopped=0, neutrino=1, v_e=0, v_u=1, v_t=0, track=1, dbang=-1, corsika=0, energy=[1], energy_track=[1], energy_cascade=[1], position_x=[1], position_y=[1], position_z=[1], azimuth=[1], zenith=[1], pid=[1], elasticity=[1], interaction_type=[1], inelasticity=[1], stopped_muon=[1], features=[8], dom_x=[9], dom_y=[9], dom_z=[9], dom_time=[9], charge=[9], rde=[9], pmt_area=[9], hlc=[9], graph_definition='KNNGraph')
+graphnet [MainProcess] INFO     2024-11-27 16:00:03 - main - tensor([[ 0.3125, -0.7293,  0.7873, -0.4457,  1.1750, -1.0000,  0.8880,  0.0000],
+        [ 0.7237, -0.6660,  0.7803, -1.0152,  0.7750, -1.0000,  0.8880,  1.0000],
+        [ 0.7237, -0.6660,  0.7803, -0.9886,  0.2750, -1.0000,  0.8880,  1.0000],
+        [ 0.7237, -0.6660,  0.7102, -1.0876,  1.1250, -1.0000,  0.8880,  1.0000],
+        [ 0.7237, -0.6660,  0.5701, -1.1543,  1.2250,  0.4000,  0.8880,  1.0000],
+        [ 0.7237, -0.6660,  0.3598, -1.3562,  1.0750,  0.4000,  0.8880,  0.0000],
+        [ 0.7237, -0.6660,  0.0094,  1.3410,  1.0750,  0.4000,  0.8880,  0.0000],
+        [ 1.1319, -0.6047,  0.7676, -0.8590,  1.6250,  0.4000,  0.8880,  0.0000],
+        [ 1.1319, -0.6047,  0.5574, -0.7543,  0.2250,  0.4000,  0.8880,  0.0000]])
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:13<00:00, 13.59s/ batches]
+graphnet [MainProcess] INFO     2024-11-27 16:00:17 - main - DataBatch(x=[56, 8], n_pulses=[5], edge_index=[2, 448], dataset_path=[5], event_no=[5], muon=[5], muon_stopped=[5], neutrino=[5], v_e=[5], v_u=[5], v_t=[5], track=[5], dbang=[5], corsika=[5], energy=[5], energy_track=[5], energy_cascade=[5], position_x=[5], position_y=[5], position_z=[5], azimuth=[5], zenith=[5], pid=[5], elasticity=[5], interaction_type=[5], inelasticity=[5], stopped_muon=[5], features=[5], dom_x=[56], dom_y=[56], dom_z=[56], dom_time=[56], charge=[56], rde=[56], pmt_area=[56], hlc=[56], graph_definition=[5], batch=[56], ptr=[6])
+graphnet [MainProcess] INFO     2024-11-27 16:00:17 - main - (56, 56)
+graphnet [MainProcess] INFO     2024-11-27 16:00:17 - main - 5

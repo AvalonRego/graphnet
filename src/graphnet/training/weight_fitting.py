@@ -58,7 +58,7 @@ class WeightFitter(ABC, Logger):
         automatic_log_bins: bool = False,
         max_weight: Optional[float] = None,
         **kwargs: Any,
-    ) -> pd.DataFrame:
+     ) -> pd.DataFrame:
         """Fit weights.
 
         Calls private `_fit_weights` method. Output is returned as a
@@ -98,6 +98,8 @@ class WeightFitter(ABC, Logger):
         if max_weight is not None:
             assert max_weight > 0 and max_weight < 1
             self._max_weight = max_weight
+        else:
+            self._max_weight = None
 
         if weight_name is None:
             self._weight_name = self._generate_weight_name()
@@ -160,10 +162,12 @@ class Uniform(WeightFitter):
         # Histogram `truth_values`
         bin_counts, _ = np.histogram(truth[self._variable], bins=self._bins)
 
-        # Get reweighting for each bin to achieve uniformity. (NB: No normalisation applied.)
+        # Get reweighting for each bin to achieve uniformity.
+        # (NB: No normalisation applied.)
         bin_weights = 1.0 / np.where(bin_counts == 0, np.nan, bin_counts)
 
-        # For each sample in `truth_values`, get the weight in the corresponding bin
+        # For each sample in `truth_values`, get the weight in
+        # the corresponding bin
         ix = np.digitize(truth[self._variable], bins=self._bins) - 1
         sample_weights = bin_weights[ix]
         sample_weights = sample_weights / sample_weights.mean()

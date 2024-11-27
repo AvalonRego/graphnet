@@ -1,0 +1,9 @@
+graphnet [MainProcess] WARNING  2024-11-27 19:18:52 - has_icecube_package - `icecube` not available. Some functionality may be missing.
+Meander not installed... contours can not be calculated.
+graphnet [MainProcess] INFO     2024-11-27 19:19:01 - Uniform.__init__ - Writing log to logs/graphnet_20241127-191901.log
+   event_no    zenith  zenith_uniform_weight
+0         0  2.786503                    1.0
+1         1  2.137937                    1.0
+2         2  2.660576                    1.0
+3         3  1.482939                    1.0
+4         4  2.225823                    1.0

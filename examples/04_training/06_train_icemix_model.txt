@@ -1,0 +1,51 @@
+graphnet [MainProcess] WARNING  2024-11-27 20:29:29 - has_icecube_package - `icecube` not available. Some functionality may be missing.
+Meander not installed... contours can not be calculated.
+graphnet [MainProcess] INFO     2024-11-27 20:29:31 - Logger.__init__ - Writing log to logs/graphnet_20241127-202931.log
+graphnet [MainProcess] INFO     2024-11-27 20:29:31 - main - features: ['sensor_pos_x', 'sensor_pos_y', 'sensor_pos_z', 't']
+graphnet [MainProcess] INFO     2024-11-27 20:29:31 - main - truth: ['injection_energy', 'injection_type', 'injection_interaction_type', 'injection_zenith', 'injection_azimuth', 'injection_bjorkenx', 'injection_bjorkeny', 'injection_position_x', 'injection_position_y', 'injection_position_z', 'injection_column_depth', 'primary_lepton_1_type', 'primary_hadron_1_type', 'primary_lepton_1_position_x', 'primary_lepton_1_position_y', 'primary_lepton_1_position_z', 'primary_hadron_1_position_x', 'primary_hadron_1_position_y', 'primary_hadron_1_position_z', 'primary_lepton_1_direction_theta', 'primary_lepton_1_direction_phi', 'primary_hadron_1_direction_theta', 'primary_hadron_1_direction_phi', 'primary_lepton_1_energy', 'primary_hadron_1_energy', 'total_energy']
+graphnet [MainProcess] WARNING  2024-11-27 20:29:31 - IceMixNodes.__init__ - hlc name 'None' not found in input_feature_names '['sensor_pos_x', 'sensor_pos_y', 'sensor_pos_z', 't']', subsampling will be random.
+graphnet [MainProcess] INFO     2024-11-27 20:29:31 - _set_dataloader_kwargs - No `val_dataloader_kwargs` given. This arg has been set to `train_dataloader_kwargs` with `shuffle` = False.
+graphnet [MainProcess] WARNING  2024-11-27 20:29:31 - _resolve_selections - GraphNeTDataModule did not receive an argument for `test_selection` and will therefore not have a prediction dataloader available.
+graphnet [MainProcess] INFO     2024-11-27 20:29:31 - _resolve_selections - GraphNeTDataModule did not receive an for `selection`. Selection will will automatically be created with a split of train: 0.9 and validation: 0.1
+graphnet [MainProcess] INFO     2024-11-27 20:29:32 - StandardModel._create_default_callbacks - EarlyStopping has been added with a patience of 2.
+graphnet [MainProcess] INFO     2024-11-27 20:29:32 - StandardModel._print_callbacks - Training initiated with callbacks: ProgressBar, EarlyStopping, ModelCheckpoint
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+/raven/u/arego/graphnet-venv-cuda/lib/python3.10/site-packages/pytorch_lightning/trainer/connectors/logger_connector/logger_connector.py:75: Starting from v1.9.0, `tensorboardX` has been removed as a dependency of the `pytorch_lightning` package, due to potential conflicts with other packages in the ML ecosystem. For this reason, `logger=True` will use `CSVLogger` as the default logger, unless the `tensorboard` or `tensorboardX` packages are found. Please `pip install lightning[extra]` or one of them to enable TensorBoard support by default
+You are using a CUDA device ('NVIDIA A100-SXM4-40GB') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+Initializing distributed: GLOBAL_RANK: 0, MEMBER: 1/1
+----------------------------------------------------------------------------------------------------
+distributed_backend=nccl
+All distributed processes registered. Starting with 1 processes
+----------------------------------------------------------------------------------------------------
+
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+
+  | Name              | Type       | Params | Mode 
+---------------------------------------------------------
+0 | _tasks            | ModuleList | 2.3 K  | train
+1 | _graph_definition | KNNGraph   | 0      | train
+2 | backbone          | DeepIce    | 115 M  | train
+---------------------------------------------------------
+115 M     Trainable params
+0         Non-trainable params
+115 M     Total params
+463.397   Total estimated model params size (MB)
+257       Modules in train mode
+0         Modules in eval mode
+SLURM auto-requeueing enabled. Setting signal handlers.
+Epoch  0: 100%|███████████████████████| 3/3 [00:00<00:00,  4.73 batch(es)/s, lr=0.001, val_loss=83.60, train_loss=18.40]`Trainer.fit` stopped: `max_epochs=1` reached.                                                                          
+Epoch  0: 100%|███████████████████████| 3/3 [00:02<00:00,  1.01 batch(es)/s, lr=0.001, val_loss=83.60, train_loss=18.40]
+graphnet [MainProcess] INFO     2024-11-27 20:29:39 - StandardModel.fit - Best-fit weights from EarlyStopping loaded.
+graphnet [MainProcess] INFO     2024-11-27 20:29:39 - StandardModel.predict_as_dataframe - Column names for predictions are: 
+ ['d_x_pred', 'd_y_pred', 'd_z_pred', 'd_kappa_pred']
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+HPU available: False, using: 0 HPUs
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+SLURM auto-requeueing enabled. Setting signal handlers.
+Predicting DataLoader 0: 100%|████████████████████████████████████████████████████| 1/1 [00:00<00:00, 28.74 batch(es)/s]
+graphnet [MainProcess] INFO     2024-11-27 20:29:41 - main - Writing results to /raven/u/arego/graphnet/data/examples/output/train_icemix_model/prometheus-events/Icemix_direction_example
+graphnet [MainProcess] INFO     2024-11-27 20:29:43 - StandardModel.save - Model saved to /raven/u/arego/graphnet/data/examples/output/train_icemix_model/prometheus-events/Icemix_direction_example/model.pth
+graphnet [MainProcess] INFO     2024-11-27 20:29:45 - StandardModel.save_state_dict - Model state_dict saved to /raven/u/arego/graphnet/data/examples/output/train_icemix_model/prometheus-events/Icemix_direction_example/state_dict.pth

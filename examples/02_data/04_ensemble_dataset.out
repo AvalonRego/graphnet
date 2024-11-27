@@ -1,0 +1,14 @@
+graphnet [MainProcess] WARNING  2024-11-27 17:32:23 - has_icecube_package - `icecube` not available. Some functionality may be missing.
+Meander not installed... contours can not be calculated.
+graphnet [MainProcess] INFO     2024-11-27 17:32:30 - IceCubeDeepCore.__init__ - Writing log to logs/graphnet_20241127-173230.log
+graphnet [MainProcess] WARNING  2024-11-27 17:32:30 - SQLiteDataset._remove_missing_columns - Removing the following (missing) truth variables: interaction_time
+graphnet [MainProcess] WARNING  2024-11-27 17:32:30 - SQLiteDataset._remove_missing_columns - Removing the following (missing) truth variables: interaction_time
+graphnet [MainProcess] INFO     2024-11-27 17:32:30 - main - dataset_1 has length: 5
+graphnet [MainProcess] INFO     2024-11-27 17:32:30 - main - dataset_2 has length: 5
+graphnet [MainProcess] INFO     2024-11-27 17:32:30 - main - EnsembleDataset has length 10
+100%|██████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:02<00:00,  1.29s/ batches]
+graphnet [MainProcess] INFO     2024-11-27 17:32:33 - main - Event 0 came from /raven/u/arego/graphnet/data/tests/sqlite/oscNext_genie_level7_v02/oscNext_genie_level7_v02_first_5_frames.db
+graphnet [MainProcess] INFO     2024-11-27 17:32:33 - main - Event 1 came from /raven/u/arego/graphnet/data/tests/sqlite/oscNext_genie_level7_v02/oscNext_genie_level7_v02_first_5_frames.db
+graphnet [MainProcess] INFO     2024-11-27 17:32:33 - main - Event 2 came from /raven/u/arego/graphnet/data/tests/sqlite/oscNext_genie_level7_v02/oscNext_genie_level7_v02_first_5_frames.db
+graphnet [MainProcess] INFO     2024-11-27 17:32:33 - main - Event 3 came from /raven/u/arego/graphnet/data/tests/sqlite/oscNext_genie_level7_v02/oscNext_genie_level7_v02_first_5_frames.db
+graphnet [MainProcess] INFO     2024-11-27 17:32:33 - main - Event 4 came from /raven/u/arego/graphnet/data/tests/sqlite/oscNext_genie_level7_v02/oscNext_genie_level7_v02_first_5_frames.db

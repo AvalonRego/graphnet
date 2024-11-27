@@ -12,6 +12,7 @@ class FEATURES:
         "charge",
         "rde",
         "pmt_area",
+        "hlc",
     ]
     DEEPCORE = ICECUBE86
     UPGRADE = DEEPCORE + [

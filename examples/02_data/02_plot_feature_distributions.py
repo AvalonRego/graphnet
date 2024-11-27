@@ -1,5 +1,6 @@
 """Example of visualization of input data from a configured Dataset."""
 
+import torch
 import os.path
 
 import matplotlib.pyplot as plt

@@ -1,0 +1,41 @@
+graphnet [MainProcess] WARNING  2024-11-27 19:21:30 - has_icecube_package - `icecube` not available. Some functionality may be missing.
+Meander not installed... contours can not be calculated.
+graphnet [MainProcess] INFO     2024-11-27 19:21:38 - BjoernLow.__init__ - Writing log to logs/graphnet_20241127-192138.log
+/raven/u/arego/graphnet/src/graphnet/training/weight_fitting.py:234: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  truth[self._weight_name][truth[self._variable] > x_low] = 1 / (
+/raven/u/arego/graphnet/src/graphnet/training/weight_fitting.py:234: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  truth[self._weight_name][truth[self._variable] > x_low] = 1 / (
+/raven/u/arego/graphnet/src/graphnet/training/weight_fitting.py:244: FutureWarning: ChainedAssignmentError: behaviour will change in pandas 3.0!
+You are setting values through chained assignment. Currently this works in certain cases, but when using Copy-on-Write (which will become the default behaviour in pandas 3.0) this will never work to update the original DataFrame or Series, because the intermediate object on which we are setting values will behave as a copy.
+A typical example is when you are setting values in a column of a DataFrame, like:
+
+df["col"][row_indexer] = value
+
+Use `df.loc[row_indexer, "col"] = values` instead, to perform the assignment in a single step and ensure this keeps updating the original `df`.
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+
+  truth[self._weight_name][truth[self._variable] > x_low] = (
+/raven/u/arego/graphnet/src/graphnet/training/weight_fitting.py:244: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  truth[self._weight_name][truth[self._variable] > x_low] = (
+   event_no    energy  energy_bjoern_low_weight
+0         0  0.179001                       1.0
+1         1  0.420125                       1.0
+2         2  0.316680                       1.0
+3         3  0.667029                       1.0
+4         4  0.241396                       1.0

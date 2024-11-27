@@ -1,0 +1,78 @@
+graphnet [MainProcess] WARNING  2024-11-27 15:03:52 - has_icecube_package - `icecube` not available. Some functionality may be missing.
+Meander not installed... contours can not be calculated.
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - Logger.__init__ - Writing log to logs/graphnet_20241127-150417.log
+/raven/u/arego/graphnet/data/tests/sqlite/oscNext_genie_level7_v02/oscNext_genie_level7_v02_first_5_frames.db
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main - Available columns in SRTInIcePulses
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . awtd
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . charge
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . dom_number
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . dom_time
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . dom_type
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . dom_x
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . dom_y
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . dom_z
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . event_no
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . event_time
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . hlc
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . is_bad_dom
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . is_bright_dom
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . is_errata_dom
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . is_saturated_dom
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . pmt_area
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . pmt_number
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . rde
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . string
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . width
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main - Available columns in truth
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . CascadeFilter_13
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . DeepCoreFilter_13
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . EventID
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . L3_oscNext_bool
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . L4_oscNext_bool
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . L5_oscNext_bool
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . L6_oscNext_bool
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . L7_oscNext_bool
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . MuonFilter_13
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . OnlineL2Filter_17
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . RunID
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . SubEventID
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . SubrunID
+graphnet [MainProcess] INFO     2024-11-27 15:04:17 - main -   . azimuth
+graphnet [MainProcess] INFO     2024-11-27 15:04:18 - main -   . dbang_decay_length
+graphnet [MainProcess] INFO     2024-11-27 15:04:18 - main -   . elasticity
+graphnet [MainProcess] INFO     2024-11-27 15:04:18 - main -   . energy
+graphnet [MainProcess] INFO     2024-11-27 15:04:18 - main -   . energy_cascade
+graphnet [MainProcess] INFO     2024-11-27 15:04:18 - main -   . energy_track
+graphnet [MainProcess] INFO     2024-11-27 15:04:18 - main -   . event_no
+graphnet [MainProcess] INFO     2024-11-27 15:04:18 - main -   . event_time
+graphnet [MainProcess] INFO     2024-11-27 15:04:18 - main -   . inelasticity
+graphnet [MainProcess] INFO     2024-11-27 15:04:18 - main -   . interaction_type
+graphnet [MainProcess] INFO     2024-11-27 15:04:18 - main -   . pid
+graphnet [MainProcess] INFO     2024-11-27 15:04:18 - main -   . position_x
+graphnet [MainProcess] INFO     2024-11-27 15:04:18 - main -   . position_y
+graphnet [MainProcess] INFO     2024-11-27 15:04:18 - main -   . position_z
+graphnet [MainProcess] INFO     2024-11-27 15:04:18 - main -   . sim_type
+graphnet [MainProcess] INFO     2024-11-27 15:04:18 - main -   . stopped_muon
+graphnet [MainProcess] INFO     2024-11-27 15:04:18 - main -   . track_length
+graphnet [MainProcess] INFO     2024-11-27 15:04:18 - main -   . zenith
+graphnet [MainProcess] WARNING  2024-11-27 15:04:18 - SQLiteDataset._remove_missing_columns - Removing the following (missing) truth variables: interaction_time
+Traceback (most recent call last):
+  File "/raven/u/arego/graphnet/examples/02_data/01_read_dataset.py", line 127, in <module>
+    main(args.backend)
+  File "/raven/u/arego/graphnet/examples/02_data/01_read_dataset.py", line 81, in main
+    logger.info(str(dataset[1]))
+  File "/raven/u/arego/graphnet/src/graphnet/data/dataset/dataset.py", line 458, in __getitem__
+    graph = self._create_graph(features, truth, node_truth, loss_weight)
+  File "/raven/u/arego/graphnet/src/graphnet/data/dataset/dataset.py", line 642, in _create_graph
+    graph = self._graph_definition(
+  File "/raven/u/arego/graphnet-venv-cuda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/raven/u/arego/graphnet-venv-cuda/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/raven/u/arego/graphnet/src/graphnet/models/graphs/graph_definition.py", line 178, in forward
+    self._validate_input(
+  File "/raven/u/arego/graphnet/src/graphnet/models/graphs/graph_definition.py", line 331, in _validate_input
+    assert len(input_feature_names) == len(
+AssertionError: Input features (['dom_x', 'dom_y', 'dom_z', 'dom_time', 'charge', 'rde', 'pmt_area']) is not what 
+               KNNGraph was instatiated
+               with (['dom_x', 'dom_y', 'dom_z', 'dom_time', 'charge', 'rde', 'pmt_area', 'hlc'])
