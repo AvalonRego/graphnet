@@ -1,0 +1,66 @@
+ Hint: Loaded cuda/12.1 but please note that no NVIDIA driver is installed on this machine.
+  0%|[32m          [0m| 0/8 [00:00<?, ? file(s)/s] 12%|[32m█▎        [0m| 1/8 [00:01<00:11,  1.59s/ file(s)] 25%|[32m██▌       [0m| 2/8 [00:02<00:08,  1.37s/ file(s)] 25%|[32m██▌       [0m| 2/8 [00:04<00:12,  2.10s/ file(s)]
+Traceback (most recent call last):
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1936, in _exec_single_context
+    self.dialect.do_executemany(
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 938, in do_executemany
+    cursor.executemany(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: TruthData.event_no
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/u/arego/graphnet/examples/05_liquido/01_convert_h5.py", line 53, in <module>
+    main(args.backend)
+  File "/u/arego/graphnet/examples/05_liquido/01_convert_h5.py", line 34, in main
+    converter(input_dir=input_dir)
+  File "/raven/u/arego/graphnet/src/graphnet/data/dataconverter.py", line 107, in __call__
+    self._launch_jobs(input_files=input_files)
+  File "/raven/u/arego/graphnet/src/graphnet/data/dataconverter.py", line 134, in _launch_jobs
+    for _ in map_fn(
+  File "/raven/u/arego/graphnet/src/graphnet/data/dataconverter.py", line 185, in _process_file
+    self._save_method(
+  File "/raven/u/arego/graphnet/src/graphnet/data/writers/graphnet_writer.py", line 81, in __call__
+    self._save_file(
+  File "/raven/u/arego/graphnet/src/graphnet/data/writers/sqlite_writer.py", line 83, in _save_file
+    create_table_and_save_to_sql(
+  File "/raven/u/arego/graphnet/src/graphnet/data/utilities/sqlite_utilities.py", line 208, in create_table_and_save_to_sql
+    save_to_sql(df, table_name=table_name, database_path=database_path)
+  File "/raven/u/arego/graphnet/src/graphnet/data/utilities/sqlite_utilities.py", line 113, in save_to_sql
+    df.to_sql(table_name, con=engine, index=False, if_exists="append")
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/pandas/core/generic.py", line 2951, in to_sql
+    return sql.to_sql(
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/pandas/io/sql.py", line 698, in to_sql
+    return pandas_sql.to_sql(
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1742, in to_sql
+    total_inserted = sql_engine.insert_records(
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1335, in insert_records
+    raise err
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1325, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/pandas/io/sql.py", line 951, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/pandas/io/sql.py", line 858, in _execute_insert
+    result = conn.execute(self.table.insert(), data)
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1418, in execute
+    return meth(
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1936, in _exec_single_context
+    self.dialect.do_executemany(
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 938, in do_executemany
+    cursor.executemany(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: TruthData.event_no
+[SQL: INSERT INTO "TruthData" (event_no, vertex_x, vertex_y, vertex_z, zenith, azimuth, interaction_time, energy, pid) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: [(1.0, -948.5614013671875, -788.848388671875, -238.91500854492188, 1.6956913471221924, 2.7865123748779297, 0.0, 0.6727868318557739, 11.0), (2.0, 135.602783203125, -465.50335693359375, -70.68306732177734, 2.0218915939331055, 1.8294239044189453, 0.0, 2.054948329925537, 11.0), (3.0, 802.066162109375, 84.5958251953125, 730.7443237304688, 1.8266491889953613, 3.5908091068267822, 0.0, 3.413602590560913, 11.0), (4.0, 1384.71826171875, 686.1353149414062, 182.5297393798828, 1.7516664266586304, 4.506016731262207, 0.0, 4.200592041015625, 11.0), (5.0, -1370.1392822265625, 415.1750793457031, -117.0528335571289, 0.628243088722229, 2.1276607513427734, 0.0, 2.8625290393829346, 11.0), (6.0, 571.9987182617188, 270.32293701171875, -694.0367431640625, 1.331160068511963, 4.907093524932861, 0.0, 2.809072256088257, 11.0), (7.0, 1349.2855224609375, 705.8573608398438, -531.546630859375, 2.1129064559936523, 5.963726997375488, 0.0, 0.5994153022766113, 11.0), (8.0, 1382.4144287109375, -544.3115844726562, 215.9923095703125, 2.0320510864257812, 1.2171072959899902, 0.0, 0.7637388110160828, 11.0)  ... displaying 10 of 100 total bound parameter sets ...  (99.0, -437.017578125, -757.3180541992188, 405.5325622558594, 2.426206588745117, 3.0643606185913086, 0.0, 0.28202611207962036, 11.0), (100.0, 562.12744140625, 714.9451904296875, 277.41571044921875, 0.4373403489589691, 5.047287464141846, 0.0, 1.3168271780014038, 11.0)]]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+srun: error: ravc4065: task 0: Exited with exit code 1
+srun: Terminating StepId=14831224.0

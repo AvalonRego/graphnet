@@ -1,0 +1,35 @@
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-01-09 15:25:56 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-01-09 15:26:48 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-09 15:26:48 - SQLiteWriter.__init__ - Writing log to [1mlogs/graphnet_20250109-152648.log[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-09 15:26:48 - DataConverter.get_map_function - Starting pool of 16 workers to process {nb_files} {unit}[0m
+[1;34mgraphnet[0m [ForkPoolWorker-2] [33mWARNING [0m 2025-01-09 15:26:50 - SQLiteWriter._save_file - Output file /u/arego/project/Experimenting/data/graphnet_out/15records/40.db already exists. Appending.[0m
+[1;34mgraphnet[0m [ForkPoolWorker-3] [33mWARNING [0m 2025-01-09 15:26:54 - SQLiteWriter._save_file - Output file /u/arego/project/Experimenting/data/graphnet_out/15records/33.db already exists. Appending.[0m
+[1;34mgraphnet[0m [ForkPoolWorker-4] [33mWARNING [0m 2025-01-09 15:26:54 - SQLiteWriter._save_file - Output file /u/arego/project/Experimenting/data/graphnet_out/15records/5.db already exists. Appending.[0m
+                                  
+================================= 
+Global information about the job: 
+================================= 
+  
+Job owner: arego(54817)
+Job name:  TT
+Node list: ravc4065
+Job start: Thu Jan  9 15:25:42 CET 2025
+Job end:   Thu Jan  9 16:17:49 CET 2025
+Work dir:  /u/arego/graphnet/examples/05_liquido/./
+Command:   /raven/u/arego/graphnet/examples/05_liquido/SlurmConversion.sh
+  
+  
+  
+==========================================================================================
+Information on jobsteps (Note: MaxRSS/AveRSS is the maximum/average over all 
+tasks of the per-task memory high-water marks; cf. "man sacct"): 
+==========================================================================================
+  
+JobID            JobName NNodes NTasks  NCPUS       MaxRSS       AveRSS    Elapsed ExitCode
+------------- ---------- ------ ------ ------ ------------ ------------ ---------- --------
+14826971              TT      1            32                             00:52:07      0:0
+14826971.0       python3      1      1     32   122136.43M   122136.43M   00:52:06    0:125
+  
+Maximum memory per node: 128.069333 GB (defined as MaxRSS*Ntasks/NNodes)
+CPU utilization: 6.5 %
+  

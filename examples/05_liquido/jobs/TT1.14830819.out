@@ -1,0 +1,35 @@
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-01-09 17:44:11 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-01-09 17:45:07 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-09 17:45:07 - SQLiteWriter.__init__ - Writing log to [1mlogs/graphnet_20250109-174507.log[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-09 17:45:07 - DataConverter.get_map_function - Processing 1 file(s) in main thread(not multiprocessing)[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-09 17:45:09 - DataConverter.merge_files - Merging files to /raven/u/arego/graphnet/data/examples/output/liquid-o_1/sqlite1/merged[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-09 17:45:09 - SQLiteWriter.merge_files - Merging 1 database files[0m
+job finished
+                                  
+================================= 
+Global information about the job: 
+================================= 
+  
+Job owner: arego(54817)
+Job name:  TT
+Node list: ravc4109
+Job start: Thu Jan  9 17:43:52 CET 2025
+Job end:   Thu Jan  9 17:45:14 CET 2025
+Work dir:  /u/arego/graphnet/examples/05_liquido/./
+Command:   /raven/u/arego/graphnet/examples/05_liquido/SlurmConversion.sh
+  
+  
+  
+==========================================================================================
+Information on jobsteps (Note: MaxRSS/AveRSS is the maximum/average over all 
+tasks of the per-task memory high-water marks; cf. "man sacct"): 
+==========================================================================================
+  
+JobID            JobName NNodes NTasks  NCPUS       MaxRSS       AveRSS    Elapsed ExitCode
+------------- ---------- ------ ------ ------ ------------ ------------ ---------- --------
+14830819              TT      1             2                             00:01:22      0:0
+14830819.0       python3      1      1      1      488.46M      488.46M   00:01:18      0:0
+  
+Maximum memory per node: 0.512185 GB (defined as MaxRSS*Ntasks/NNodes)
+CPU utilization: 4.9 %
+  

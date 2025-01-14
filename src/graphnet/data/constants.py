@@ -32,6 +32,7 @@ class FEATURES:
     ]
     KAGGLE = ["x", "y", "z", "time", "charge", "auxiliary"]
     LIQUIDO = ["sipm_x", "sipm_y", "sipm_z", "t"]
+    PONE=["time", "pmt_id", "module_id", "string_id"]
 
 
 class TRUTH:
@@ -94,3 +95,5 @@ class TRUTH:
         "energy",
         "pid",
     ]
+
+    PONE=["type"]

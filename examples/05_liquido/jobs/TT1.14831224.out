@@ -1,0 +1,34 @@
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-01-09 18:04:04 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-01-09 18:04:53 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-09 18:04:53 - SQLiteWriter.__init__ - Writing log to [1mlogs/graphnet_20250109-180453.log[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-09 18:04:53 - DataConverter.get_map_function - Processing 8 file(s) in main thread(not multiprocessing)[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-01-09 18:04:56 - SQLiteWriter._save_file - Output file /raven/u/arego/graphnet/data/examples/output/liquid-o_1/sqlite1/liquido_electrons.db already exists. Appending.[0m
+job finished
+                                  
+================================= 
+Global information about the job: 
+================================= 
+  
+Job owner: arego(54817)
+Job name:  TT
+Node list: ravc4065
+Job start: Thu Jan  9 18:03:47 CET 2025
+Job end:   Thu Jan  9 18:05:01 CET 2025
+Work dir:  /u/arego/graphnet/examples/05_liquido/./
+Command:   /raven/u/arego/graphnet/examples/05_liquido/SlurmConversion.sh
+  
+  
+  
+==========================================================================================
+Information on jobsteps (Note: MaxRSS/AveRSS is the maximum/average over all 
+tasks of the per-task memory high-water marks; cf. "man sacct"): 
+==========================================================================================
+  
+JobID            JobName NNodes NTasks  NCPUS       MaxRSS       AveRSS    Elapsed ExitCode
+------------- ---------- ------ ------ ------ ------------ ------------ ---------- --------
+14831224              TT      1             2                             00:01:14      0:0
+14831224.0       python3      1      1      1      658.32M      658.32M   00:01:06      1:0
+  
+Maximum memory per node: 0.690295 GB (defined as MaxRSS*Ntasks/NNodes)
+CPU utilization: 8.1 %
+  

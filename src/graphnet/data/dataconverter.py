@@ -21,9 +21,9 @@ from .extractors.icecube import I3Extractor
 from .extractors.liquido import H5Extractor
 from .extractors.internal import ParquetExtractor
 from .extractors.prometheus import PrometheusExtractor
+from .extractors.pone import PONE_H5Extractor
 
 from .dataclasses import I3FileSet
-
 
 def init_global_index(index: Synchronized, output_files: List[str]) -> None:
     """Make `global_index` available to pool workers."""
@@ -51,6 +51,7 @@ class DataConverter(ABC, Logger):
             List[ParquetExtractor],
             List[H5Extractor],
             List[PrometheusExtractor],
+            List[PONE_H5Extractor],
         ],
         index_column: str = "event_no",
         num_workers: int = 1,
@@ -101,6 +102,7 @@ class DataConverter(ABC, Logger):
         # Get the file reader to produce a list of input files
         # in the directory
         input_files = self._file_reader.find_files(path=input_dir)
+        #print(input_files)
         self._launch_jobs(input_files=input_files)
         self._output_files = [
             os.path.join(
@@ -109,6 +111,7 @@ class DataConverter(ABC, Logger):
             )
             for file in input_files
         ]
+        #print(self._output_files)
 
     @final
     def _launch_jobs(
@@ -144,8 +147,9 @@ class DataConverter(ABC, Logger):
         This function is called in parallel.
         """
         # Read and apply extractors
+        #print(self._file_reader)
         data = self._file_reader(file_path=file_path)
-
+        #print(f"data{data}")
         #
         if isinstance(data, list):
             # Assign event_no's to each event in data
@@ -154,8 +158,13 @@ class DataConverter(ABC, Logger):
             dataframes = self._assign_event_no(data=data)
         elif isinstance(data, dict):
             keys = [key for key in data.keys()]
+            #print(keys)
+            #print(data)
             counter = []
             for key in keys:
+                #print('data_converter')
+                #print(isinstance(data[key], pd.DataFrame),type(data[key]))
+                #print(self._index_column in data[key].columns,self._index_column,data[key].columns)
                 assert isinstance(data[key], pd.DataFrame)
                 assert self._index_column in data[key].columns
                 counter.append(len(data[key][self._index_column]))
@@ -171,7 +180,11 @@ class DataConverter(ABC, Logger):
 
         # Create output file name
         output_file_name = self._create_file_name(input_file_path=file_path)
-
+        if '/hits' in dataframes.keys():
+            dataframes['hits']=dataframes.pop('/hits')
+            dataframes['truth']=dataframes['hits'][['type']]
+            dataframes['hits']=dataframes['hits'].loc[:, dataframes['hits'].columns != 'type']
+        #print(dataframes)
         # Apply save method
         self._save_method(
             data=dataframes,
@@ -331,6 +344,7 @@ class DataConverter(ABC, Logger):
         Args:
             files: Intermediate files to be merged.
         """
+        #print(files)
         if (files is None) & (len(self._output_files) > 0):
             # If no input files are given, but output files from conversion
             # is available.

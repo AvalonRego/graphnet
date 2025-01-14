@@ -215,6 +215,7 @@ class ParquetWriter(GraphNeTWriter):
         self, tables: List[str], input_dir: str, truth_dir: str
     ) -> None:
         try:
+            print(tables)
             assert "merged" not in tables
         except AssertionError as e:
             self.error(

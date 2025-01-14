@@ -18,7 +18,7 @@ from graphnet.data.extractors.icecube import I3Extractor
 from graphnet.data.extractors.internal import ParquetExtractor
 from graphnet.data.extractors.liquido import H5Extractor
 from graphnet.data.extractors.prometheus import PrometheusExtractor
-
+from graphnet.data.extractors.pone import PONE_H5Extractor
 
 class GraphNeTFileReader(Logger, ABC):
     """A generic base class for FileReaders in GraphNeT.
@@ -100,6 +100,7 @@ class GraphNeTFileReader(Logger, ABC):
             List[ParquetExtractor],
             List[H5Extractor],
             List[PrometheusExtractor],
+            List[PONE_H5Extractor],
         ],
     ) -> None:
         """Set `Extractor`(s) as member variable.
@@ -121,6 +122,7 @@ class GraphNeTFileReader(Logger, ABC):
             List[ParquetExtractor],
             List[H5Extractor],
             List[PrometheusExtractor],
+            List[PONE_H5Extractor],
         ],
     ) -> None:
         for extractor in extractors:
