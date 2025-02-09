@@ -1,0 +1,32 @@
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-01-23 19:16:27 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-01-23 19:16:28 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-23 19:16:28 - Logger.__init__ - Writing log to [1mlogs/graphnet_20250123-191628.log[0m
+job finished
+                                  
+================================= 
+Global information about the job: 
+================================= 
+  
+Job owner: arego(54817)
+Job name:  TT
+Node list: ravc4112
+Job start: Thu Jan 23 19:16:05 CET 2025
+Job end:   Thu Jan 23 19:16:29 CET 2025
+Work dir:  /u/arego/graphnet/examples/02_data/./
+Command:   /raven/u/arego/graphnet/examples/02_data/slurm.sh
+  
+  
+  
+==========================================================================================
+Information on jobsteps (Note: MaxRSS/AveRSS is the maximum/average over all 
+tasks of the per-task memory high-water marks; cf. "man sacct"): 
+==========================================================================================
+  
+JobID            JobName NNodes NTasks  NCPUS       MaxRSS       AveRSS    Elapsed ExitCode
+------------- ---------- ------ ------ ------ ------------ ------------ ---------- --------
+15201658              TT      1             2                             00:00:24      0:0
+15201658.0       python3      1      1      1        1.30M        1.30M   00:00:21      1:0
+  
+Maximum memory per node: 0.001363 GB (defined as MaxRSS*Ntasks/NNodes)
+CPU utilization: 0.0 %
+  

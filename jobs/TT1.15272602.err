@@ -1,0 +1,95 @@
+ Hint: Loaded cuda/12.1 but please note that no NVIDIA driver is installed on this machine.
+/mpcdf/soft/SLE_15/packages/x86_64/anaconda/3/2023.03/lib/python3.10/multiprocessing/popen_fork.py:66: RuntimeWarning: Using fork() can cause Polars to deadlock in the child process.
+In addition, using fork() with Python in general is a recipe for mysterious
+deadlocks and crashes.
+
+The most likely reason you are seeing this error is because you are using the
+multiprocessing module on Linux, which uses fork() by default. This will be
+fixed in Python 3.14. Until then, you want to use the "spawn" context instead.
+
+See https://docs.pola.rs/user-guide/misc/multiprocessing/ for details.
+
+If you really know what your doing, you can silence this warning with the warning module
+or by setting POLARS_ALLOW_FORKING_THREAD=1.
+
+  self.pid = os.fork()
+  0%|[32m          [0m| 0/11 [00:00<?, ? file(s)/s]100%|[32m██████████[0m| 11/11 [00:00<00:00, 7574.67 file(s)/s]
+multiprocessing.pool.RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1936, in _exec_single_context
+    self.dialect.do_executemany(
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 938, in do_executemany
+    cursor.executemany(statement, parameters)
+sqlite3.OperationalError: attempt to write a readonly database
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/mpcdf/soft/SLE_15/packages/x86_64/anaconda/3/2023.03/lib/python3.10/multiprocessing/pool.py", line 125, in worker
+    result = (True, func(*args, **kwds))
+  File "/raven/u/arego/graphnet/src/graphnet/data/dataconverter.py", line 190, in _process_file
+    self._save_method(
+  File "/raven/u/arego/graphnet/src/graphnet/data/writers/graphnet_writer.py", line 81, in __call__
+    self._save_file(
+  File "/raven/u/arego/graphnet/src/graphnet/data/writers/sqlite_writer.py", line 83, in _save_file
+    create_table_and_save_to_sql(
+  File "/raven/u/arego/graphnet/src/graphnet/data/utilities/sqlite_utilities.py", line 208, in create_table_and_save_to_sql
+    save_to_sql(df, table_name=table_name, database_path=database_path)
+  File "/raven/u/arego/graphnet/src/graphnet/data/utilities/sqlite_utilities.py", line 113, in save_to_sql
+    df.to_sql(table_name, con=engine, index=False, if_exists="append")
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/pandas/core/generic.py", line 2951, in to_sql
+    return sql.to_sql(
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/pandas/io/sql.py", line 698, in to_sql
+    return pandas_sql.to_sql(
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1742, in to_sql
+    total_inserted = sql_engine.insert_records(
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1335, in insert_records
+    raise err
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/pandas/io/sql.py", line 1325, in insert_records
+    return table.insert(chunksize=chunksize, method=method)
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/pandas/io/sql.py", line 951, in insert
+    num_inserted = exec_insert(conn, keys, chunk_iter)
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/pandas/io/sql.py", line 858, in _execute_insert
+    result = conn.execute(self.table.insert(), data)
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1418, in execute
+    return meth(
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/sqlalchemy/engine/base.py", line 1936, in _exec_single_context
+    self.dialect.do_executemany(
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/sqlalchemy/engine/default.py", line 938, in do_executemany
+    cursor.executemany(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) attempt to write a readonly database
+[SQL: INSERT INTO hits (time, string_id, module_id, pmt_id, event_no) VALUES (?, ?, ?, ?, ?)]
+[parameters: [(832.9012982972268, 0, 5, 1, 0), (836.1505747592521, 0, 5, 1, 0), (840.5372661260462, 0, 5, 1, 0), (836.3046027521146, 0, 5, 1, 0), (839.6009071062487, 0, 5, 1, 0), (837.8322219435537, 0, 5, 1, 0), (841.6359735856556, 0, 5, 1, 0), (841.0610403399188, 0, 5, 1, 0)  ... displaying 10 of 16080945 total bound parameter sets ...  (1488.0457429270039, 13, 13, 8, 25), (1486.8948031646105, 13, 13, 8, 25)]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/u/arego/graphnet/examples/05_liquido/pone_h5.py", line 51, in <module>
+    main(args.backend)
+  File "/u/arego/graphnet/examples/05_liquido/pone_h5.py", line 32, in main
+    converter(input_dir=input_dir)
+  File "/raven/u/arego/graphnet/src/graphnet/data/dataconverter.py", line 106, in __call__
+    self._launch_jobs(input_files=input_files)
+  File "/raven/u/arego/graphnet/src/graphnet/data/dataconverter.py", line 133, in _launch_jobs
+    for _ in map_fn(
+  File "/mpcdf/soft/SLE_15/packages/x86_64/anaconda/3/2023.03/lib/python3.10/multiprocessing/pool.py", line 873, in next
+    raise value
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) attempt to write a readonly database
+[SQL: INSERT INTO hits (time, string_id, module_id, pmt_id, event_no) VALUES (?, ?, ?, ?, ?)]
+[parameters: [(832.9012982972268, 0, 5, 1, 0), (836.1505747592521, 0, 5, 1, 0), (840.5372661260462, 0, 5, 1, 0), (836.3046027521146, 0, 5, 1, 0), (839.6009071062487, 0, 5, 1, 0), (837.8322219435537, 0, 5, 1, 0), (841.6359735856556, 0, 5, 1, 0), (841.0610403399188, 0, 5, 1, 0)  ... displaying 10 of 16080945 total bound parameter sets ...  (1488.0457429270039, 13, 13, 8, 25), (1486.8948031646105, 13, 13, 8, 25)]]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+srun: error: ravc4043: task 0: Exited with exit code 1
+srun: Terminating StepId=15272602.0

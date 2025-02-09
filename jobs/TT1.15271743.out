@@ -1,0 +1,209 @@
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-01-26 20:02:00 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-01-26 20:08:42 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-26 20:08:43 - SQLiteWriter.__init__ - Writing log to [1mlogs/graphnet_20250126-200843.log[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-26 20:08:43 - DataConverter.get_map_function - Starting pool of 8 workers to process {nb_files} {unit}[0m
+['/hits']
+{'/hits':            time  string_id  module_id  pmt_id  event_no  type
+0   1144.396661          0          6       0         0     1
+1   1143.814254          0          6       0         0     1
+2   1145.087015          0          6       0         0     1
+3   1149.751901          0          6       0         0     1
+4   1149.743517          0          6       0         0     1
+..          ...        ...        ...     ...       ...   ...
+7    608.763558         11          1      14        25     1
+8    607.333172         11          1      14        25     1
+9    611.057570         11          1      14        25     1
+10   608.022041         11          1      14        25     1
+11   609.283452         11          1      14        25     1
+
+[564125 rows x 6 columns]}
+[1;34mgraphnet[0m [ForkPoolWorker-9] [33mWARNING [0m 2025-01-26 20:08:56 - SQLiteWriter._save_file - Output file /u/arego/project/Experimenting/data/graphnet_out/15slite1/8.db already exists. Appending.[0m
+['/hits']
+{'/hits':            time  string_id  module_id  pmt_id  event_no  type
+0    836.726862          0          3       1         2     1
+1    831.618484          0          3       1         2     1
+2    830.188405          0          3       1         2     1
+3    829.622874          0          3       1         2     1
+4    830.972956          0          3       1         2     1
+..          ...        ...        ...     ...       ...   ...
+5   1230.403608         13         16       3        20     1
+6   1229.398123         13         16       3        20     1
+7   1227.893186         13         16       3        20     1
+8   1231.055813         13         16       3        20     1
+9   1233.007355         13         16       3        20     1
+
+[4735223 rows x 6 columns]}
+[1;34mgraphnet[0m [ForkPoolWorker-4] [33mWARNING [0m 2025-01-26 20:09:05 - SQLiteWriter._save_file - Output file /u/arego/project/Experimenting/data/graphnet_out/15slite1/3.db already exists. Appending.[0m
+['/hits']
+{'/hits':           time  string_id  module_id  pmt_id  event_no  type
+0   786.813049          0          0       0         0     1
+1   786.433145          0          0       0         0     1
+2   788.604878          0          0       0         0     1
+3   783.700004          0          0       0         0     1
+4   786.487287          0          0       0         0     1
+..         ...        ...        ...     ...       ...   ...
+3   938.964799         11         15      15        21     1
+4   940.499721         11         15      15        21     1
+5   939.901409         11         15      15        21     1
+6   938.708949         11         15      15        21     1
+7   938.278574         11         15      15        21     1
+
+[7077489 rows x 6 columns]}
+[1;34mgraphnet[0m [ForkPoolWorker-8] [33mWARNING [0m 2025-01-26 20:09:08 - SQLiteWriter._save_file - Output file /u/arego/project/Experimenting/data/graphnet_out/15slite1/1.db already exists. Appending.[0m
+['/hits']
+{'/hits':            time  string_id  module_id  pmt_id  event_no  type
+0    498.920163          3         14       1         1     1
+1    497.574547          3         14       1         1     1
+2    507.354101          3         14       1         1     1
+3    499.104936          3         14       1         1     1
+4    501.277259          3         14       1         1     1
+..          ...        ...        ...     ...       ...   ...
+9   1052.089443         13         11       6        15     1
+10  1051.144001         13         11       6        15     1
+11  1059.401876         13         11       6        15     1
+12  1057.914162         13         11       6        15     1
+13  1059.114622         13         11       6        15     1
+
+[7091342 rows x 6 columns]}
+[1;34mgraphnet[0m [ForkPoolWorker-6] [33mWARNING [0m 2025-01-26 20:09:11 - SQLiteWriter._save_file - Output file /u/arego/project/Experimenting/data/graphnet_out/15slite1/2.db already exists. Appending.[0m
+['/hits']
+{'/hits':            time  string_id  module_id  pmt_id  event_no  type
+0    832.901298          0          5       1         0     1
+1    836.150575          0          5       1         0     1
+2    840.537266          0          5       1         0     1
+3    836.304603          0          5       1         0     1
+4    839.600907          0          5       1         0     1
+..          ...        ...        ...     ...       ...   ...
+8   1483.543766         13         13       8        25     1
+9   1485.508043         13         13       8        25     1
+10  1484.671536         13         13       8        25     1
+11  1488.045743         13         13       8        25     1
+12  1486.894803         13         13       8        25     1
+
+[16080945 rows x 6 columns]}
+[1;34mgraphnet[0m [ForkPoolWorker-2] [33mWARNING [0m 2025-01-26 20:09:21 - SQLiteWriter._save_file - Output file /u/arego/project/Experimenting/data/graphnet_out/15slite1/5.db already exists. Appending.[0m
+['/hits']
+{'/hits':            time  string_id  module_id  pmt_id  event_no  type
+0    955.443053          0         11       1         2     1
+1    956.498187          0         11       1         2     1
+2    958.281873          0         11       1         2     1
+3    963.184935          0         11       1         2     1
+4    963.191171          0         11       1         2     1
+..          ...        ...        ...     ...       ...   ...
+9   1202.181958         13         17       6        24     1
+10  1200.738099         13         17       6        24     1
+11  1200.965113         13         17       6        24     1
+12  1201.894657         13         17       6        24     1
+13  1201.072270         13         17       6        24     1
+
+[16286432 rows x 6 columns]}
+[1;34mgraphnet[0m [ForkPoolWorker-5] [33mWARNING [0m 2025-01-26 20:09:23 - SQLiteWriter._save_file - Output file /u/arego/project/Experimenting/data/graphnet_out/15slite1/10.db already exists. Appending.[0m
+['/hits']
+{'/hits':            time  string_id  module_id  pmt_id  event_no  type
+0   1284.176134          0          0       0         0     1
+1   1282.742153          0          0       0         0     1
+2   1289.253731          0          0       0         0     1
+3   1286.710143          0          0       0         0     1
+4   1284.206955          0          0       0         0     1
+..          ...        ...        ...     ...       ...   ...
+8   1460.314797         13         10      12        23     1
+9   1461.155053         13         10      12        23     1
+10  1461.726651         13         10      12        23     1
+11  1461.794030         13         10      12        23     1
+12  1465.624806         13         10      12        23     1
+
+[23772264 rows x 6 columns]}
+[1;34mgraphnet[0m [ForkPoolWorker-7] [33mWARNING [0m 2025-01-26 20:09:40 - SQLiteWriter._save_file - Output file /u/arego/project/Experimenting/data/graphnet_out/15slite1/9.db already exists. Appending.[0m
+['/hits']
+{'/hits':           time  string_id  module_id  pmt_id  event_no  type
+0   655.651824          0          0       1         0     1
+1   664.499843          0          0       1         0     1
+2   656.122771          0          0       1         0     1
+3   657.453777          0          0       1         0     1
+4   656.386830          0          0       1         0     1
+..         ...        ...        ...     ...       ...   ...
+4   955.869076          9          1       0        18     1
+5   959.120494          9          1       0        18     1
+6   960.545642          9          1       0        18     1
+0   957.225900          9          1      12        18     1
+1   964.846432          9          1      12        18     1
+
+[27781044 rows x 6 columns]}
+[1;34mgraphnet[0m [ForkPoolWorker-3] [33mWARNING [0m 2025-01-26 20:09:44 - SQLiteWriter._save_file - Output file /u/arego/project/Experimenting/data/graphnet_out/15slite1/4.db already exists. Appending.[0m
+['/hits']
+{'/hits':            time  string_id  module_id  pmt_id  event_no  type
+0    683.236701          0          5       1         0     1
+1    685.932364          0          5       1         0     1
+2    684.872705          0          5       1         0     1
+3    690.524791          0          5       1         0     1
+4    685.719594          0          5       1         0     1
+..          ...        ...        ...     ...       ...   ...
+5   1297.654041         13          5      12        21     1
+6   1295.396023         13          5      12        21     1
+7   1295.886389         13          5      12        21     1
+8   1296.909826         13          5      12        21     1
+9   1299.478919         13          5      12        21     1
+
+[8212596 rows x 6 columns]}
+[1;34mgraphnet[0m [ForkPoolWorker-9] [33mWARNING [0m 2025-01-26 20:10:12 - SQLiteWriter._save_file - Output file /u/arego/project/Experimenting/data/graphnet_out/15slite1/0.db already exists. Appending.[0m
+['/hits']
+{'/hits':           time  string_id  module_id  pmt_id  event_no  type
+0   482.163765          0          0       0         0     1
+1   481.780494          0          0       0         0     1
+2   481.845973          0          0       0         0     1
+3   484.497772          0          0       0         0     1
+4   483.655981          0          0       0         0     1
+..         ...        ...        ...     ...       ...   ...
+4   879.027339         13          6      12        26     1
+5   882.872282         13          6      12        26     1
+6   882.434112         13          6      12        26     1
+7   881.665424         13          6      12        26     1
+8   879.804540         13          6      12        26     1
+
+[14575567 rows x 6 columns]}
+[1;34mgraphnet[0m [ForkPoolWorker-4] [33mWARNING [0m 2025-01-26 20:16:49 - SQLiteWriter._save_file - Output file /u/arego/project/Experimenting/data/graphnet_out/15slite1/7.db already exists. Appending.[0m
+['/hits']
+{'/hits':            time  string_id  module_id  pmt_id  event_no  type
+0    517.128385          7          3      15         0     1
+1    511.959266          7          3      15         0     1
+2    514.434803          7          3      15         0     1
+3    521.461515          7          3      15         0     1
+4    521.719497          7          3      15         0     1
+..          ...        ...        ...     ...       ...   ...
+10  1437.523585         13          0       7        23     1
+11  1434.938437         13          0       7        23     1
+12  1437.464319         13          0       7        23     1
+13  1434.426148         13          0       7        23     1
+14  1437.890590         13          0       7        23     1
+
+[20160662 rows x 6 columns]}
+[1;34mgraphnet[0m [ForkPoolWorker-6] [33mWARNING [0m 2025-01-26 20:20:18 - SQLiteWriter._save_file - Output file /u/arego/project/Experimenting/data/graphnet_out/15slite1/6.db already exists. Appending.[0m
+job finished
+                                  
+================================= 
+Global information about the job: 
+================================= 
+  
+Job owner: arego(54817)
+Job name:  TT
+Node list: ravc4043
+Job start: Sun Jan 26 20:00:22 CET 2025
+Job end:   Sun Jan 26 20:39:47 CET 2025
+Work dir:  /u/arego/graphnet/./
+Command:   /raven/u/arego/graphnet/examples/05_liquido/SlurmConversion.sh
+  
+  
+  
+==========================================================================================
+Information on jobsteps (Note: MaxRSS/AveRSS is the maximum/average over all 
+tasks of the per-task memory high-water marks; cf. "man sacct"): 
+==========================================================================================
+  
+JobID            JobName NNodes NTasks  NCPUS       MaxRSS       AveRSS    Elapsed ExitCode
+------------- ---------- ------ ------ ------ ------------ ------------ ---------- --------
+15271743              TT      1             2                             00:39:25      0:0
+15271743.0       python3      1      1      1    86750.88M    86750.88M   00:39:08      0:0
+  
+Maximum memory per node: 90.964892 GB (defined as MaxRSS*Ntasks/NNodes)
+CPU utilization: 127.6 %
+  

@@ -1,0 +1,5 @@
+ Hint: Loaded cuda/12.1 but please note that no NVIDIA driver is installed on this machine.
+srun: error: CPU binding outside of job step allocation, allocated CPUs are: 0x0000FFFFFFFF0000000000FFFFFFFF000000.
+srun: error: Task launch for StepId=15302552.0 failed on node ravc4113: Unable to satisfy cpu bind request
+srun: error: Application launch failed: Unable to satisfy cpu bind request
+srun: Job step aborted

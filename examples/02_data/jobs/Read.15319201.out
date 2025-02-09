@@ -1,0 +1,72 @@
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-01-30 04:19:20 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-01-30 04:20:06 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - Logger.__init__ - Writing log to [1mlogs/graphnet_20250130-042006.log[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main - Available columns in hits[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . time[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . string_id[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . module_id[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . pmt_id[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . event_no[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . module_location_x[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . module_location_y[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . module_location_z[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . module_radius[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . pmt_orientation_x[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . pmt_orientation_y[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . pmt_orientation_z[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . pmt_efficiency[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . pmt_area[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . pmt_noise_rate[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . pmt_location_x[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . pmt_location_y[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . pmt_location_z[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main - Available columns in records[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . location_x[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . location_y[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . location_z[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . orientation_x[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . orientation_y[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . orientation_z[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . event_no[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . energy[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . length[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . time[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . type[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . particle_id[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:06 - main -   . duration[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:14 - main - Data(x=[1545, 10], n_pulses=1545, edge_index=[2, 13815], dataset_path='/u/arego/project/Experimenting/data/graphnet_out/New2/0.db', muon=-1, muon_stopped=-1, noise=-1, neutrino=-1, v_e=-1, v_u=-1, v_t=-1, track=-1, dbang=-1, corsika=-1, features=[10], module_location_x=[1545], module_location_y=[1545], module_location_z=[1545], pmt_orientation_x=[1545], pmt_orientation_y=[1545], pmt_orientation_z=[1545], pmt_location_x=[1545], pmt_location_y=[1545], pmt_location_z=[1545], time=[1545], graph_definition='KNNGraph')[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-01-30 04:20:14 - main - tensor([[ 0.0000,  0.0693,  0.3500,  ...,  0.0693,  0.3502, -0.3182],
+        [ 0.0000,  0.0693,  0.3500,  ...,  0.0693,  0.3502, -0.3181],
+        [ 0.0000,  0.0693,  0.3500,  ...,  0.0693,  0.3502, -0.3182],
+        ...,
+        [ 0.0400,  0.1386,  0.4000,  ...,  0.1386,  0.4002, -0.3242],
+        [ 0.0400,  0.1386,  0.4000,  ...,  0.1386,  0.4002, -0.3241],
+        [ 0.0400,  0.1386,  0.4000,  ...,  0.1386,  0.4002, -0.3242]])[0m
+                                  
+================================= 
+Global information about the job: 
+================================= 
+  
+Job owner: arego(54817)
+Job name:  TT
+Node list: ravc3237
+Job start: Thu Jan 30 04:15:38 CET 2025
+Job end:   Thu Jan 30 12:15:52 CET 2025
+Work dir:  /u/arego/graphnet/examples/02_data/./
+Command:   /raven/u/arego/graphnet/examples/02_data/slurm.sh
+  
+  
+  
+==========================================================================================
+Information on jobsteps (Note: MaxRSS/AveRSS is the maximum/average over all 
+tasks of the per-task memory high-water marks; cf. "man sacct"): 
+==========================================================================================
+  
+JobID            JobName NNodes NTasks  NCPUS       MaxRSS       AveRSS    Elapsed ExitCode
+------------- ---------- ------ ------ ------ ------------ ------------ ---------- --------
+15319201              TT      1            64                             08:00:14      0:0
+15319201.0       python3      1      1     64     2430.31M     2430.31M   08:00:10     0:15
+  
+Maximum memory per node: 2.548362 GB (defined as MaxRSS*Ntasks/NNodes)
+CPU utilization: 3.1 %
+  

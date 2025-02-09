@@ -1,0 +1,29 @@
+job finished
+                                  
+================================= 
+Global information about the job: 
+================================= 
+  
+Job owner: arego(54817)
+Job name:  TT
+Node list: ravc4113
+Job start: Wed Jan 29 02:36:34 CET 2025
+Job end:   Wed Jan 29 02:36:42 CET 2025
+Work dir:  /u/arego/graphnet/examples/02_data/./
+Command:   /raven/u/arego/graphnet/examples/02_data/slurm.sh
+  
+  
+  
+==========================================================================================
+Information on jobsteps (Note: MaxRSS/AveRSS is the maximum/average over all 
+tasks of the per-task memory high-water marks; cf. "man sacct"): 
+==========================================================================================
+  
+JobID            JobName NNodes NTasks  NCPUS       MaxRSS       AveRSS    Elapsed ExitCode
+------------- ---------- ------ ------ ------ ------------ ------------ ---------- --------
+15302552              TT      1            64                             00:00:08      0:0
+15302552.0       python3      1      1     64                             00:00:00     0:64
+  
+Maximum memory per node: 0.001367 GB (defined as MaxRSS*Ntasks/NNodes)
+CPU utilization: 0.0 %
+  

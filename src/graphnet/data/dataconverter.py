@@ -25,6 +25,8 @@ from .extractors.pone import PONE_H5Extractor
 
 from .dataclasses import I3FileSet
 
+multiprocessing.set_start_method('spawn', force=True)
+
 def init_global_index(index: Synchronized, output_files: List[str]) -> None:
     """Make `global_index` available to pool workers."""
     global global_index, global_output_files  # type: ignore[name-defined]
@@ -136,7 +138,7 @@ class DataConverter(ABC, Logger):
         ):
             self.debug("processing file.")
         self._update_shared_variables(pool)
-
+    
     @final
     def _process_file(self, file_path: Union[str, I3FileSet]) -> None:
         """Process a single file.
@@ -147,9 +149,8 @@ class DataConverter(ABC, Logger):
         This function is called in parallel.
         """
         # Read and apply extractors
-        #print(self._file_reader)
         data = self._file_reader(file_path=file_path)
-        #print(f"data{data}")
+
         #
         if isinstance(data, list):
             # Assign event_no's to each event in data
@@ -158,13 +159,8 @@ class DataConverter(ABC, Logger):
             dataframes = self._assign_event_no(data=data)
         elif isinstance(data, dict):
             keys = [key for key in data.keys()]
-            #print(keys)
-            #print(data)
             counter = []
             for key in keys:
-                #print('data_converter')
-                #print(isinstance(data[key], pd.DataFrame),type(data[key]))
-                #print(self._index_column in data[key].columns,self._index_column,data[key].columns)
                 assert isinstance(data[key], pd.DataFrame)
                 assert self._index_column in data[key].columns
                 counter.append(len(data[key][self._index_column]))
@@ -178,13 +174,17 @@ class DataConverter(ABC, Logger):
         # Delete `data` to save memory
         del data
 
+        def filter_keys(keys, char='/'):
+            return [s[1:] for s in keys if char in s]
+
+        new_keys=filter_keys(dataframes.keys())
+        #print(dataframes.keys())
+        for new_key in new_keys:
+            dataframes[new_key]=dataframes.pop(f'/{new_key}')
+
         # Create output file name
         output_file_name = self._create_file_name(input_file_path=file_path)
-        if '/hits' in dataframes.keys():
-            dataframes['hits']=dataframes.pop('/hits')
-            dataframes['truth']=dataframes['hits'][['type']]
-            dataframes['hits']=dataframes['hits'].loc[:, dataframes['hits'].columns != 'type']
-        #print(dataframes)
+
         # Apply save method
         self._save_method(
             data=dataframes,
@@ -192,7 +192,7 @@ class DataConverter(ABC, Logger):
             n_events=n_events,
             output_dir=self._output_dir,
         )
-
+        
     @final
     def _create_file_name(self, input_file_path: Union[str, I3FileSet]) -> str:
         """Convert input file path to an output file name."""

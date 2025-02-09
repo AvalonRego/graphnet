@@ -1,0 +1,17 @@
+ Hint: Loaded cuda/12.1 but please note that no NVIDIA driver is installed on this machine.
+Traceback (most recent call last):
+  File "/u/arego/graphnet/examples/05_liquido/pone_h5.py", line 51, in <module>
+    main(args.backend)
+  File "/u/arego/graphnet/examples/05_liquido/pone_h5.py", line 16, in main
+    os.makedirs(outdir, exist_ok=True)
+  File "/mpcdf/soft/SLE_15/packages/x86_64/anaconda/3/2023.03/lib/python3.10/os.py", line 215, in makedirs
+    makedirs(head, exist_ok=exist_ok)
+  File "/mpcdf/soft/SLE_15/packages/x86_64/anaconda/3/2023.03/lib/python3.10/os.py", line 215, in makedirs
+    makedirs(head, exist_ok=exist_ok)
+  File "/mpcdf/soft/SLE_15/packages/x86_64/anaconda/3/2023.03/lib/python3.10/os.py", line 215, in makedirs
+    makedirs(head, exist_ok=exist_ok)
+  File "/mpcdf/soft/SLE_15/packages/x86_64/anaconda/3/2023.03/lib/python3.10/os.py", line 225, in makedirs
+    mkdir(name, mode)
+PermissionError: [Errno 13] Permission denied: '/viper'
+srun: error: ravc3217: task 0: Exited with exit code 1
+srun: Terminating StepId=15491427.0

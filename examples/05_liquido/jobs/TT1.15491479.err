@@ -1,0 +1,13 @@
+ Hint: Loaded cuda/12.1 but please note that no NVIDIA driver is installed on this machine.
+Traceback (most recent call last):
+  File "/u/arego/graphnet/examples/05_liquido/pone_h5.py", line 51, in <module>
+    main(args.backend)
+  File "/u/arego/graphnet/examples/05_liquido/pone_h5.py", line 32, in main
+    converter(input_dir=input_dir)
+  File "/raven/u/arego/graphnet/src/graphnet/data/dataconverter.py", line 106, in __call__
+    input_files = self._file_reader.find_files(path=input_dir)
+  File "/raven/u/arego/graphnet/src/graphnet/data/readers/pone_reader.py", line 53, in find_files
+    raise FileNotFoundError(f"No .h5 files found in the given path(s): {path}")
+FileNotFoundError: No .h5 files found in the given path(s): ['/viper/ptmp/arego/temp']
+srun: error: ravc3529: task 0: Exited with exit code 1
+srun: Terminating StepId=15491479.0

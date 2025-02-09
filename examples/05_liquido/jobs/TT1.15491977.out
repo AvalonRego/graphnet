@@ -1,0 +1,37 @@
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-02-09 16:58:10 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-02-09 16:58:43 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-09 16:58:43 - ParquetWriter.__init__ - Writing log to [1mlogs/graphnet_20250209-165843.log[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-09 16:58:43 - DataConverter.get_map_function - Processing 1 file(s) in main thread(not multiprocessing)[0m
+ponereader try extractor:<graphnet.data.extractors.pone.pone_extractor.PONE_H5HitExtractor object at 0x14fd5f5e0550>
+Error in extractor hits: ``/raven/u/arego/graphnet/examples/05_liquido/1026.h5`` does not exist
+ponereader try extractor:<graphnet.data.extractors.pone.pone_extractor.PONE_H5TruthExtractor object at 0x14fd5f5e0460>
+Error in extractor /records: ``/raven/u/arego/graphnet/examples/05_liquido/1026.h5`` does not exist
+job finished
+                                  
+================================= 
+Global information about the job: 
+================================= 
+  
+Job owner: arego(54817)
+Job name:  TT
+Node list: ravc3117
+Job start: Sun Feb  9 16:58:02 CET 2025
+Job end:   Sun Feb  9 16:58:47 CET 2025
+Work dir:  /u/arego/graphnet/examples/05_liquido/./
+Command:   /raven/u/arego/graphnet/examples/05_liquido/SlurmConversion.sh
+  
+  
+  
+==========================================================================================
+Information on jobsteps (Note: MaxRSS/AveRSS is the maximum/average over all 
+tasks of the per-task memory high-water marks; cf. "man sacct"): 
+==========================================================================================
+  
+JobID            JobName NNodes NTasks  NCPUS       MaxRSS       AveRSS    Elapsed ExitCode
+------------- ---------- ------ ------ ------ ------------ ------------ ---------- --------
+15491977              TT      1            16                             00:00:45      0:0
+15491977.0       python3      1      1     16      493.30M      493.30M   00:00:41      1:0
+  
+Maximum memory per node: 0.517263 GB (defined as MaxRSS*Ntasks/NNodes)
+CPU utilization: 1.4 %
+  
