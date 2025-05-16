@@ -57,7 +57,7 @@ class ParquetWriter(GraphNeTWriter):
                 os.makedirs(table_dir, exist_ok=True)
                 df = data[table].set_index(self._index_column)
                 df.to_parquet(
-                    os.path.join(table_dir, file_name + f"_{table}.parquet")
+                    os.path.join(table_dir, f"{table}_{file_name}.parquet")
                 )
 
     def merge_files(

@@ -1,4 +1,3 @@
-"""Example of training Model."""
 
 import os
 from typing import Any, Dict, List, Optional
@@ -7,24 +6,35 @@ from pytorch_lightning.loggers import WandbLogger
 import torch
 from torch.optim.adam import Adam
 
-from graphnet.constants import EXAMPLE_DATA_DIR, EXAMPLE_OUTPUT_DIR
+#from graphnet.constants import EXAMPLE_DATA_DIR, EXAMPLE_OUTPUT_DIR
 from graphnet.data.constants import FEATURES, TRUTH
 from graphnet.models import StandardModel
-from graphnet.models.detector.prometheus import Prometheus
+from graphnet.models.detector.pone import PONE
 from graphnet.models.gnn import DynEdge
 from graphnet.models.graphs import KNNGraph
-from graphnet.models.task.reconstruction import EnergyReconstruction
+from graphnet.models.task.classification import BinaryClassificationTask
 from graphnet.training.callbacks import PiecewiseLinearLR
-from graphnet.training.loss_functions import LogCoshLoss
+from graphnet.training.loss_functions import BinaryCrossEntropyLoss
 from graphnet.utilities.argparse import ArgumentParser
 from graphnet.utilities.logging import Logger
 from graphnet.data import GraphNeTDataModule
 from graphnet.data.dataset import SQLiteDataset
 from graphnet.data.dataset import ParquetDataset
+from torch.optim.lr_scheduler import ReduceLROnPlateau
+
+from datetime import datetime
+
+from graphnet.models import Model
+from graphnet.utilities.config import ModelConfig
+
+
+torch.multiprocessing.set_start_method('spawn', force=True)
+
+
 
 # Constants
-features = FEATURES.PROMETHEUS
-truth = TRUTH.PROMETHEUS
+features = FEATURES.PONE
+truth = TRUTH.PONE
 
 
 def main(
@@ -75,8 +85,13 @@ def main(
         ),
     }
 
-    archive = os.path.join(EXAMPLE_OUTPUT_DIR, "train_model_without_configs")
-    run_name = "dynedge_{}_example".format(config["target"])
+    def get_timestamp():
+        """Generate a timestamp with month, day, hour, and minute."""
+        return datetime.now().strftime("%b-%d_%H-%M")
+
+    archive = os.path.join('/raven/ptmp/arego/Class/', "Training")
+    run_name = f"Training_{config['target']}_{get_timestamp()}"
+
     if wandb:
         # Log configuration to W&B
         wandb_logger.experiment.config.update(config)
@@ -87,7 +102,7 @@ def main(
     # The graph representation is defined by the detector,
     # in this case the Prometheus detector.
     # The standard node definition is used, which is NodesAsPulses.
-    graph_definition = KNNGraph(detector=Prometheus())
+    graph_definition = KNNGraph(detector=PONE())
 
     # Use GraphNetDataModule to load in data and create dataloaders
     # The input here depends on the dataset being used,
@@ -106,6 +121,10 @@ def main(
             "batch_size": config["batch_size"],
             "num_workers": config["num_workers"],
         },
+        validation_dataloader_kwargs={
+            "batch_size": config["batch_size"],
+            "num_workers": config["num_workers"],
+        },
         test_dataloader_kwargs={
             "batch_size": config["batch_size"],
             "num_workers": config["num_workers"],
@@ -114,7 +133,7 @@ def main(
 
     training_dataloader = dm.train_dataloader
     validation_dataloader = dm.val_dataloader
-
+    test_dataloader=dm.test_dataloader
     # Building model
 
     # Define architecture of the backbone, in this example
@@ -129,12 +148,12 @@ def main(
     # The target and prediction are transformed using the log10 function.
     # When infering the prediction is transformed back to the
     # original scale using 10^x.
-    task = EnergyReconstruction(
+    task = BinaryClassificationTask(
         hidden_size=backbone.nb_outputs,
         target_labels=config["target"],
-        loss_function=LogCoshLoss(),
-        transform_prediction_and_target=lambda x: torch.log10(x),
-        transform_inference=lambda x: torch.pow(10, x),
+        loss_function=BinaryCrossEntropyLoss(),
+        transform_prediction_and_target=lambda x: x,
+        transform_inference=lambda x: x,
     )
     # Define the full model, which includes the backbone, task(s),
     # along with typical machine learning options such as
@@ -144,7 +163,7 @@ def main(
         backbone=backbone,
         tasks=[task],
         optimizer_class=Adam,
-        optimizer_kwargs={"lr": 1e-03, "eps": 1e-03},
+        optimizer_kwargs={"lr": 1e-05, "eps": 1e-08},
         scheduler_class=PiecewiseLinearLR,
         scheduler_kwargs={
             "milestones": [
@@ -158,8 +177,16 @@ def main(
             "interval": "step",
         },
     )
+    # del model
+    # model_config = ModelConfig.load("/u/arego/ptmp_link/Class/1_GPU_OUT/dynedge_type_example_wandb/model_config_train_ds.yml")
+    # model = Model.from_config(model_config,trust=True)  # With randomly initialised weights.
+    # model.load_state_dict("/u/arego/ptmp_link/Class/1_GPU_OUT/dynedge_type_example_wandb/state_dict_train_ds.pth") 
 
-    # Training model
+    # # logger.info(f'check if models are identical :{modelA==model}')
+
+
+
+    #Training model
     model.fit(
         training_dataloader,
         validation_dataloader,
@@ -169,14 +196,28 @@ def main(
     )
 
     # Get predictions
-    additional_attributes = model.target_labels
+    additional_attributes =['event_no','record_id'] + model.target_labels 
     assert isinstance(additional_attributes, list)  # mypy
 
-    results = model.predict_as_dataframe(
-        validation_dataloader,
-        additional_attributes=additional_attributes + ["event_no"],
-        gpus=config["fit"]["gpus"],
-    )
+    logger.info(f'additional_attributes: {additional_attributes}')
+
+    model.eval()
+
+    # results = model.predict_as_dataframe(
+    #     test_dataloader,
+    #     prediction_columns=['out'],
+    #     additional_attributes=additional_attributes,
+    #     gpus=config["fit"]["gpus"],
+    # )
+
+    temp_num = 0
+    temp = run_name
+
+    while os.path.isfile(os.path.join(archive, temp)):
+        temp = f"{run_name}_{temp_num}"
+        temp_num += 1
+
+    run_name = temp
 
     # Save predictions and model to file
     db_name = path.split("/")[-1].split(".")[0]
@@ -184,8 +225,13 @@ def main(
     logger.info(f"Writing results to {path}")
     os.makedirs(path, exist_ok=True)
 
+
+
     # Save results as .csv
-    results.to_csv(f"{path}/results.csv")
+    #results.to_csv(f"{path}/results.csv")
+
+    # logger.info(f"shape: {results.shape}")
+    # logger.info(f'head: {results.head().to_string()}')
 
     # Save full model (including weights) to .pth file - not version safe
     # Note: Models saved as .pth files in one version of graphnet
@@ -196,6 +242,13 @@ def main(
     # This method of saving models is the safest way.
     model.save_state_dict(f"{path}/state_dict.pth")
     model.save_config(f"{path}/model_config.yml")
+    ParquetDataset(path=path,
+    truth_table=truth_table,
+    pulsemaps=pulsemap,
+    features=FEATURES.PONE,
+    truth=TRUTH.PONE,
+    graph_definition=graph_definition
+            ).config.dump(f'{path}/dataset_config_train_ds.yml')
 
 
 if __name__ == "__main__":
@@ -210,35 +263,31 @@ Train GNN model without the use of config files.
     parser.add_argument(
         "--path",
         help="Path to dataset file (default: %(default)s)",
-        default=f"{EXAMPLE_DATA_DIR}/parquet/prometheus/merged/",
+        default=f"/raven/ptmp/arego/RT6K_1_parquet/",
     )
 
     parser.add_argument(
         "--pulsemap",
         help="Name of pulsemap to use (default: %(default)s)",
-        default="total",
+        default="hits",
     )
 
     parser.add_argument(
         "--target",
-        help=(
-            "Name of feature to use as regression target (default: "
-            "%(default)s)"
-        ),
-        default="total_energy",
+        default="duration",
     )
 
     parser.add_argument(
         "--truth-table",
         help="Name of truth table to be used (default: %(default)s)",
-        default="mc_truth",
+        default="records",
     )
 
     parser.with_standard_arguments(
         "gpus",
         ("max-epochs", 10),
         "early-stopping-patience",
-        ("batch-size", 16),
+        ("batch-size", 128),
         "num-workers",
     )
 
@@ -249,18 +298,8 @@ Train GNN model without the use of config files.
     )
 
     args, unknown = parser.parse_known_args()
+    print(args)
 
-
-    print(f"Path: {args.path}\n"
-      f"Pulsemap: {args.pulsemap}\n"
-      f"Target: {args.target}\n"
-      f"Truth Table: {args.truth_table}\n"
-      f"GPUs: {args.gpus}\n"
-      f"Max Epochs: {args.max_epochs}\n"
-      f"Early Stopping Patience: {args.early_stopping_patience}\n"
-      f"Batch Size: {args.batch_size}\n"
-      f"Num Workers: {args.num_workers}\n"
-      f"WandB: {args.wandb}")
 
     main(
         args.path,

@@ -162,3 +162,8 @@ data/examples/output/
 !/data/tests/prometheus/22980001_photons.parquet
 # Notebooks
 **.ipynb
+**/jobs**
+**/jobs
+/examples/04_training/job
+**.err
+**.out

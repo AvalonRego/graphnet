@@ -1,0 +1,95 @@
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-02-23 14:17:14 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-02-23 14:17:52 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:52 - Logger.__init__ - Writing log to [1mlogs/graphnet_20250223-141752.log[0m
+path: /raven/ptmp/arego/SRT6K_1_parquet//hits
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main - Available columns in hits[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . time[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . string_id[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . module_id[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . pmt_id[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . record_id[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . module_location_x[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . module_location_y[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . module_location_z[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . pmt_orientation_x[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . pmt_orientation_y[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . pmt_orientation_z[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . pmt_location_x[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . pmt_location_y[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . pmt_location_z[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . event_no[0m
+path: /raven/ptmp/arego/SRT6K_1_parquet//records
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main - Available columns in records[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . location_x[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . location_y[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . location_z[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . orientation_x[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . orientation_y[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . orientation_z[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . record_id[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . energy[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . length[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . time[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . particle_id[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . duration[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . type[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:53 - main -   . event_no[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:59 - main - Data(x=[398, 10], n_pulses=398, edge_index=[2, 3184], dataset_path='/raven/ptmp/arego/SRT6K_1_parquet/', event_no=[1], muon=-1, muon_stopped=-1, noise=-1, neutrino=-1, v_e=-1, v_u=-1, v_t=-1, track=-1, dbang=-1, corsika=-1, location_x=[1], location_y=[1], location_z=[1], orientation_x=[1], orientation_y=[1], orientation_z=[1], energy=[1], length=[1], time=[398], type=[1], particle_id=[1], duration=[1], features=[10], module_location_x=[398], module_location_y=[398], module_location_z=[398], pmt_orientation_x=[398], pmt_orientation_y=[398], pmt_orientation_z=[398], pmt_location_x=[398], pmt_location_y=[398], pmt_location_z=[398], graph_definition='KNNGraph')[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-23 14:17:59 - main - tensor([[-1.2000e-01,  0.0000e+00,  1.5000e-01,  ...,  0.0000e+00,
+          1.4981e-01, -2.9083e-01],
+        [-1.2000e-01,  0.0000e+00,  6.0000e-01,  ..., -8.8750e-05,
+          5.9981e-01, -2.9147e-01],
+        [-1.2000e-01,  0.0000e+00,  9.5000e-01,  ...,  8.8750e-05,
+          9.5019e-01, -2.9210e-01],
+        ...,
+        [ 4.0000e-02,  0.0000e+00,  2.5000e-01,  ...,  8.8750e-05,
+          2.4981e-01, -2.9218e-01],
+        [ 0.0000e+00,  6.9282e-02,  6.0000e-01,  ...,  6.9407e-02,
+          6.0011e-01, -2.9169e-01],
+        [-4.0000e-02,  1.3856e-01,  6.5000e-01,  ...,  1.3869e-01,
+          6.5011e-01, -2.9283e-01]])[0m
+[1;34mgraphnet[0m [Process-1] [33mWARNING [0m 2025-02-23 14:18:05 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-1] [33mWARNING [0m 2025-02-23 14:18:06 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-2] [33mWARNING [0m 2025-02-23 14:18:10 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-2] [33mWARNING [0m 2025-02-23 14:18:11 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-3] [33mWARNING [0m 2025-02-23 14:18:15 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-3] [33mWARNING [0m 2025-02-23 14:18:16 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-4] [33mWARNING [0m 2025-02-23 14:18:19 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-4] [33mWARNING [0m 2025-02-23 14:18:21 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-5] [33mWARNING [0m 2025-02-23 14:18:24 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-5] [33mWARNING [0m 2025-02-23 14:18:25 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-6] [33mWARNING [0m 2025-02-23 14:18:29 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-6] [33mWARNING [0m 2025-02-23 14:18:30 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-7] [33mWARNING [0m 2025-02-23 14:18:34 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-7] [33mWARNING [0m 2025-02-23 14:18:35 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-8] [33mWARNING [0m 2025-02-23 14:18:39 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-8] [33mWARNING [0m 2025-02-23 14:18:40 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+job finished
+                                  
+================================= 
+Global information about the job: 
+================================= 
+  
+Job owner: arego(54817)
+Job name:  test_gpu
+Node list: ravg1163
+Job start: Sun Feb 23 14:15:57 CET 2025
+Job end:   Sun Feb 23 14:19:00 CET 2025
+Work dir:  /u/arego/graphnet/examples/02_data/./
+Command:   /raven/u/arego/graphnet/examples/02_data/slurm.sh
+  
+  
+  
+==========================================================================================
+Information on jobsteps (Note: MaxRSS/AveRSS is the maximum/average over all 
+tasks of the per-task memory high-water marks; cf. "man sacct"): 
+==========================================================================================
+  
+JobID            JobName NNodes NTasks  NCPUS       MaxRSS       AveRSS    Elapsed ExitCode
+------------- ---------- ------ ------ ------ ------------ ------------ ---------- --------
+15796445        test_gpu      1            36                             00:03:03      0:0
+15796445.0       python3      1      1     36     3817.98M     3817.98M   00:02:59      1:0
+  
+Maximum memory per node: 4.003442 GB (defined as MaxRSS*Ntasks/NNodes)
+CPU utilization: 1.8 %
+  

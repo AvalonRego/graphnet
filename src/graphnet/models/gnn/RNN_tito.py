@@ -9,6 +9,8 @@ from graphnet.models.rnn.node_rnn import Node_RNN
 
 from graphnet.utilities.config import save_model_config
 from torch_geometric.data import Data
+import torch.distributed as dist
+
 
 
 class RNN_TITO(GNN):
@@ -128,7 +130,7 @@ class RNN_TITO(GNN):
         )
 
         self._dynedge_tito = DynEdgeTITO(
-            nb_inputs=self._rnn_hidden_size + 5,
+            nb_inputs=75,#self._rnn_hidden_size + 5,
             dyntrans_layer_sizes=self._dyntrans_layer_sizes,
             features_subset=self._features_subset,
             global_pooling_schemes=self._global_pooling_schemes,
@@ -140,9 +142,15 @@ class RNN_TITO(GNN):
             nb_neighbours=self._nb_neighbours,
         )
 
-    def forward(self, data: Data) -> torch.Tensor:
-        """Apply learnable forward pass of the RNN and tito model."""
-        data = self._rnn(data)
-        readout = self._dynedge_tito(data)
 
+    def forward(self, data):
+        if dist.is_initialized():  
+            dist.barrier()  # Ensure all processes sync before printing
+        
+        #print(f"Input shape: {data.x.shape}")
+        data = self._rnn(data)
+        #print(f"After RNN: {data.x.shape}")
+        readout = self._dynedge_tito(data)
+        #print(f"After DynEdgeTITO: {readout.shape}")
+        
         return readout

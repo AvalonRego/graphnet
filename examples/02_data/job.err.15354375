@@ -1,0 +1,5 @@
+  0%|[32m          [0m| 0/2 [00:00<?, ? batches/s]slurmstepd: error: *** STEP 15354375.0 ON ravg1051 CANCELLED AT 2025-02-01T21:52:16 DUE TO TIME LIMIT ***
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 15354375 ON ravg1051 CANCELLED AT 2025-02-01T21:52:16 DUE TO TIME LIMIT ***
+srun: got SIGCONT
+srun: forcing job termination

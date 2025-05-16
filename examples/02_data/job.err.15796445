@@ -1,0 +1,34 @@
+  0%|[32m          [0m| 0/47 [00:00<?, ? batches/s]  0%|[32m          [0m| 0/47 [00:44<?, ? batches/s]
+Traceback (most recent call last):
+  File "/u/arego/graphnet/examples/02_data/ReadMyDataSet.py", line 149, in <module>
+    main(args.backend)
+  File "/u/arego/graphnet/examples/02_data/ReadMyDataSet.py", line 119, in main
+    for batch in tqdm(dataloader, unit=" batches", colour="green"):
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/tqdm/std.py", line 1178, in __iter__
+    for obj in iterable:
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1346, in _next_data
+    return self._process_data(data)
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1372, in _process_data
+    data.reraise()
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/torch/_utils.py", line 722, in reraise
+    raise exception
+TypeError: Caught TypeError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/torch/utils/data/_utils/worker.py", line 308, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/raven/u/arego/graphnet-venv/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/raven/u/arego/graphnet/src/graphnet/data/dataset/parquet/parquet_dataset.py", line 365, in __getitem__
+    self.query_table(
+  File "/raven/u/arego/graphnet/src/graphnet/data/dataset/parquet/parquet_dataset.py", line 258, in query_table
+    array = self._query_table(
+  File "/raven/u/arego/graphnet/src/graphnet/data/dataset/parquet/parquet_dataset.py", line 295, in _query_table
+    array = np.array()
+TypeError: array() missing required argument 'object' (pos 0)
+
+srun: error: ravg1163: task 0: Exited with exit code 1
+srun: Terminating StepId=15796445.0

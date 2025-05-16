@@ -32,7 +32,9 @@ class FEATURES:
     ]
     KAGGLE = ["x", "y", "z", "time", "charge", "auxiliary"]
     LIQUIDO = ["sipm_x", "sipm_y", "sipm_z", "t"]
-    PONE=["time", "pmt_id", "module_id", "string_id"]
+    PONE= ['module_location_x', 'module_location_y', 'module_location_z', 
+           'pmt_orientation_x', 'pmt_orientation_y', 'pmt_orientation_z', 
+           'pmt_location_x', 'pmt_location_y', 'pmt_location_z', 'time']
 
 
 class TRUTH:
@@ -96,4 +98,6 @@ class TRUTH:
         "pid",
     ]
 
-    PONE=["type"]
+    PONE=['location_x', 'location_y', 'location_z', 'orientation_x',
+       'orientation_y', 'orientation_z', 'energy', 'length',
+       'time', 'type', 'particle_id', 'duration','record_id']

@@ -30,6 +30,10 @@ from graphnet.models.graphs import KNNGraph
 # IceCube-specific detector class
 from graphnet.models.detector.icecube import IceCubeDeepCore
 
+
+torch.multiprocessing.set_start_method('spawn', force=True)
+
+
 # Dictionary mapping backend type to respective Dataset class
 DATASET_CLASS = {
     "sqlite": SQLiteDataset,  # SQLite dataset class
@@ -46,6 +50,7 @@ def main(backend: str) -> None:
     # Initialize logger to track events
     logger = Logger()
 
+
     # Check that the provided backend is valid
     assert backend in DATASET_CLASS
 
@@ -54,7 +59,7 @@ def main(backend: str) -> None:
     pulsemap = "SRTInIcePulses"  # Pulse map name for detector data
     truth_table = "truth"  # Truth table name for truth values
     batch_size = 128  # Number of samples per batch
-    num_workers = 30  # Number of worker processes for data loading
+    num_workers = 8  # Number of worker processes for data loading
     wait_time = 0.00  # Time to wait between batches (in seconds)
 
     # Define the graph representation (using K-Nearest Neighbors graph)
@@ -67,9 +72,10 @@ def main(backend: str) -> None:
             with sqlite3.connect(path) as conn:
                 cursor = conn.execute(f"SELECT * FROM {table} LIMIT 1")  # Fetch one record
                 names = list(map(lambda x: x[0], cursor.description))  # Extract column names
+                print(f'filed names: {names}')
         else:
-            ak = awkward.from_parquet(path, lazy=True)  # Read Parquet file using Awkward Arrays
-            names = ak[table].fields  # Get the fields (column names) from the specified table
+            ak = awkward.from_parquet(f'{path}/{table}', lazy=True)  # Read Parquet file using Awkward Arrays
+            names = ak.fields  # Get the fields (column names) from the specified table
             del ak  # Clean up the loaded data
 
         # Log the available columns in the table
@@ -77,6 +83,7 @@ def main(backend: str) -> None:
         for name in names:
             logger.info(f"  . {name}")
 
+    print('everything good till the data set class')
     # Initialize the dataset using the correct backend class
     dataset = DATASET_CLASS[backend](
         path=path,
@@ -97,6 +104,7 @@ def main(backend: str) -> None:
         # Close the SQLite connection if it was indexed
         dataset._close_connection()
 
+    print('everything good till the data loader')
     # Initialize the DataLoader for batching the data
     dataloader = torch.utils.data.DataLoader(
         dataset,
@@ -104,20 +112,30 @@ def main(backend: str) -> None:
         shuffle=True,  # Shuffle the data before batching
         num_workers=num_workers,  # Number of worker processes to load data in parallel
         collate_fn=Batch.from_data_list,  # Function to collate individual samples into a batch
-        # persistent_workers=True,  # Uncomment for persistent workers in data loading (optional)
+        persistent_workers=True,  # Uncomment for persistent workers in data loading (optional)
         prefetch_factor=2,  # Number of batches to prefetch in parallel
     )
+    print(f"Dataset length: {len(dataset)}")
+    first_item = dataset[0]
+    print('first item')
+    print(first_item)
 
+
+    print('timer')
     # Time the data loading process
     with timer("torch dataloader"):
+        print('Here?')
         # Iterate through the DataLoader in batches
-        for batch in tqdm(dataloader, unit=" batches", colour="green"):
+        for i,batch in enumerate(tqdm(dataloader, unit=" batches", colour="green")):
+            print('here?')
             time.sleep(wait_time)  # Optional sleep between batches for performance tuning
 
     # Log information about the last batch
     logger.info(str(batch))  # Log the batch content
     logger.info(batch.size())  # Log the size of the batch
     logger.info(batch.num_graphs)  # Log the number of graphs in the batch
+
+    print('surely not here')
 
 if __name__ == "__main__":
 

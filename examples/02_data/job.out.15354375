@@ -1,0 +1,104 @@
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-02-01 09:52:42 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [MainProcess] [33mWARNING [0m 2025-02-01 09:53:03 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:03 - Logger.__init__ - Writing log to [1mlogs/graphnet_20250201-095303.log[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main - Available columns in hits[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . time[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . string_id[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . module_id[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . pmt_id[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . module_location_x[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . module_location_y[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . module_location_z[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . pmt_orientation_x[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . pmt_orientation_y[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . pmt_orientation_z[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . pmt_location_x[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . pmt_location_y[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . pmt_location_z[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . event_no[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main - Available columns in records[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . location_x[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . location_y[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . location_z[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . orientation_x[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . orientation_y[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . orientation_z[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . energy[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . length[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . time[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . type[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . particle_id[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . duration[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:53:04 - main -   . event_no[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 09:59:29 - main - Data(x=[438466, 10], n_pulses=438466, edge_index=[2, 3945159], dataset_path='/u/arego/project/Experimenting/data/graphnet_out/Usable', event_no=[1], muon=-1, muon_stopped=-1, noise=-1, neutrino=-1, v_e=-1, v_u=-1, v_t=-1, track=-1, dbang=-1, corsika=-1, location_x=[1], location_y=[1], location_z=[1], orientation_x=[1], orientation_y=[1], orientation_z=[1], energy=[1], length=[1], time=[438466], type=[1], particle_id=[1], duration=[1], features=[10], module_location_x=[438466], module_location_y=[438466], module_location_z=[438466], pmt_orientation_x=[438466], pmt_orientation_y=[438466], pmt_orientation_z=[438466], pmt_location_x=[438466], pmt_location_y=[438466], pmt_location_z=[438466], graph_definition='KNNGraph')[0m
+[1;34mgraphnet[0m [MainProcess] [32mINFO    [0m 2025-02-01 10:05:51 - main - tensor([[-0.1200,  0.0000,  0.2500,  ...,  0.0000,  0.2502, -0.3106],
+        [-0.1200,  0.0000,  0.2500,  ...,  0.0000,  0.2502, -0.3105],
+        [-0.1200,  0.0000,  0.2500,  ...,  0.0000,  0.2502, -0.3105],
+        ...,
+        [ 0.0400, -0.1386,  0.5000,  ..., -0.1386,  0.4998, -0.3054],
+        [ 0.0400, -0.1386,  0.5000,  ..., -0.1386,  0.4998, -0.3052],
+        [ 0.0400, -0.1386,  0.5000,  ..., -0.1386,  0.4998, -0.3053]])[0m
+[1;34mgraphnet[0m [Process-1] [33mWARNING [0m 2025-02-01 10:05:56 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-1] [33mWARNING [0m 2025-02-01 10:05:57 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-2] [33mWARNING [0m 2025-02-01 10:06:02 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-2] [33mWARNING [0m 2025-02-01 10:06:03 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-3] [33mWARNING [0m 2025-02-01 10:06:08 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-3] [33mWARNING [0m 2025-02-01 10:06:09 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-4] [33mWARNING [0m 2025-02-01 10:06:14 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-4] [33mWARNING [0m 2025-02-01 10:06:15 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-5] [33mWARNING [0m 2025-02-01 10:06:20 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-5] [33mWARNING [0m 2025-02-01 10:06:22 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-6] [33mWARNING [0m 2025-02-01 10:06:27 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-6] [33mWARNING [0m 2025-02-01 10:06:28 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-7] [33mWARNING [0m 2025-02-01 10:06:33 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-7] [33mWARNING [0m 2025-02-01 10:06:34 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-8] [33mWARNING [0m 2025-02-01 10:06:39 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-8] [33mWARNING [0m 2025-02-01 10:06:40 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-9] [33mWARNING [0m 2025-02-01 10:06:45 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-9] [33mWARNING [0m 2025-02-01 10:06:46 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-10] [33mWARNING [0m 2025-02-01 10:06:51 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-10] [33mWARNING [0m 2025-02-01 10:06:53 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-11] [33mWARNING [0m 2025-02-01 10:06:57 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-11] [33mWARNING [0m 2025-02-01 10:06:59 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-12] [33mWARNING [0m 2025-02-01 10:07:04 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-12] [33mWARNING [0m 2025-02-01 10:07:05 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-13] [33mWARNING [0m 2025-02-01 10:07:10 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-13] [33mWARNING [0m 2025-02-01 10:07:11 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-14] [33mWARNING [0m 2025-02-01 10:07:16 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-14] [33mWARNING [0m 2025-02-01 10:07:17 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-15] [33mWARNING [0m 2025-02-01 10:07:22 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-15] [33mWARNING [0m 2025-02-01 10:07:23 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-16] [33mWARNING [0m 2025-02-01 10:07:28 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-16] [33mWARNING [0m 2025-02-01 10:07:29 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-17] [33mWARNING [0m 2025-02-01 10:07:34 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-17] [33mWARNING [0m 2025-02-01 10:07:36 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+[1;34mgraphnet[0m [Process-18] [33mWARNING [0m 2025-02-01 10:07:40 - has_icecube_package - `icecube` not available. Some functionality may be missing.[0m
+[1;34mgraphnet[0m [Process-18] [33mWARNING [0m 2025-02-01 10:07:42 - has_jammy_flows_package - `jammy_flows` not available. Normalizing Flow functionality is missing.[0m
+                                  
+================================= 
+Global information about the job: 
+================================= 
+  
+Job owner: arego(54817)
+Job name:  test_gpu
+Node list: ravg1051
+Job start: Sat Feb  1 09:51:48 CET 2025
+Job end:   Sat Feb  1 21:52:16 CET 2025
+Work dir:  /u/arego/graphnet/examples/02_data/./
+Command:   /raven/u/arego/graphnet/examples/02_data/slurm.sh
+  
+  
+  
+==========================================================================================
+Information on jobsteps (Note: MaxRSS/AveRSS is the maximum/average over all 
+tasks of the per-task memory high-water marks; cf. "man sacct"): 
+==========================================================================================
+  
+JobID            JobName NNodes NTasks  NCPUS       MaxRSS       AveRSS    Elapsed ExitCode
+------------- ---------- ------ ------ ------ ------------ ------------ ---------- --------
+15354375        test_gpu      1            36                             12:00:28      0:0
+15354375.0       python3      1      1     36    28210.92M    28210.92M   12:00:27     0:15
+  
+Maximum memory per node: 29.581292 GB (defined as MaxRSS*Ntasks/NNodes)
+CPU utilization: 11.0 %
+  
