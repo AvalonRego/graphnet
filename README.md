@@ -18,7 +18,7 @@
 
 Feel free to join the [GraphNeT Slack group](https://join.slack.com/t/graphnet-team/signup)!
 
-Check ReadMe.txt for info on use for POne.
+Check [ReadMe.txt](https://github.com/AvalonRego/graphnet/blob/main/ReadMe.txt) for info on use for POne.
 
 ### Publications using GraphNeT
 
