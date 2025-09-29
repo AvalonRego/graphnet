@@ -18,6 +18,8 @@
 
 Feel free to join the [GraphNeT Slack group](https://join.slack.com/t/graphnet-team/signup)!
 
+Check ReadMe.txt for info on use for POne.
+
 ### Publications using GraphNeT
 
 | Type | Title | DOI |
